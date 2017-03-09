@@ -1,3 +1,4 @@
+/* çº¿æ€§è¡¨çš„é¡ºåºå­˜å‚¨ç»“æ„ å¤´æ–‡ä»¶ ADTæ¨¡å‹ */
 #include <stdio.h>
 #include <stdlib.h>
 #define MaxSize 50
@@ -9,43 +10,43 @@ typedef struct
 	int length;
 }SqList;
 
-/* ½¨Á¢Ë³Ğò±í */
+/* å»ºç«‹é¡ºåºè¡¨ */
 void CreateList (SqList * &L, ElemType a[], int n)
 {
 	int i;
 	L = (SqList *)malloc(sizeof(SqList));
 	for (i = 0; i < n; i++)
 		L->data[i] = a[i];
-	L->length = n;		//³¤¶È
+	L->length = n;		//é•¿åº¦
 }
 
-/* »ù±¾Ëã·¨ */
-//³õÊ¼»¯ÏßĞÔ±í
+/* åŸºæœ¬ç®—æ³• */
+//åˆå§‹åŒ–çº¿æ€§è¡¨
 void InitList (SqList * &L)
 {
 	L = (SqList *)malloc(sizeof(SqList));
-	L->length = 0;	//ÖÃ¿Õ³¤¶È
+	L->length = 0;	//ç½®ç©ºé•¿åº¦
 }
 
-//Ïú»ÙÏßĞÔ±í
+//é”€æ¯çº¿æ€§è¡¨
 void DestroyList (SqList * &L)
 {
 	free(L);
 }
 
-//ÅĞ¶ÏÏßĞÔ±íÊÇ·ñÎª¿Õ
+//åˆ¤æ–­çº¿æ€§è¡¨æ˜¯å¦ä¸ºç©º
 bool ListEmpty (SqList * L)
 {
 	return (L->length == 0);
 }
 
-//ÇóÏßĞÔ±íµÄ³¤¶È
+//æ±‚çº¿æ€§è¡¨çš„é•¿åº¦
 int ListLength(SqList * L)
 {
 	return (L->length);
 }
 
-//Êä³öÏßĞÔ±í
+//è¾“å‡ºçº¿æ€§è¡¨
 void DispList(SqList * L)
 {
 	int i;
@@ -54,7 +55,7 @@ void DispList(SqList * L)
 	printf ("\n");
 }
 
-//ÇóÏßĞÔ±íÖĞÄ³¸öÊı¾İÔªËØÖµ
+//æ±‚çº¿æ€§è¡¨ä¸­æŸä¸ªæ•°æ®å…ƒç´ å€¼
 bool GetElem (SqList * L, int i, ElemType &e)
 {
 	if (i < 1|| i > L->length)
@@ -63,7 +64,7 @@ bool GetElem (SqList * L, int i, ElemType &e)
 	return true;
 }
 
-//°´ÔªËØÖµ²éÕÒ
+//æŒ‰å…ƒç´ å€¼æŸ¥æ‰¾
 int LocateElem (SqLite * L, ElemType e)
 {
 	int i = 0;
@@ -75,7 +76,7 @@ int LocateElem (SqLite * L, ElemType e)
 		return i+1;
 }
 
-//²åÈëÊı¾İÔªËØ
+//æ’å…¥æ•°æ®å…ƒç´ 
 bool ListInsert (SqList * &L, int i, ElemType e)
 {
 	int j;
@@ -89,7 +90,7 @@ bool ListInsert (SqList * &L, int i, ElemType e)
 	return true;
 }
 
-//É¾³ıÊı¾İÔªËØ
+//åˆ é™¤æ•°æ®å…ƒç´ 
 bool ListDelete (SqList * &L, int i, ElemType e)
 {
 	int j;
@@ -101,3 +102,4 @@ bool ListDelete (SqList * &L, int i, ElemType e)
 	L->length-;
 	return true;
 }
+/* 3/9/2017 by bigCat22 */
