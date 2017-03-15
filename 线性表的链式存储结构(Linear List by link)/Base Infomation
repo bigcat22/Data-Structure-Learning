@@ -1,0 +1,4 @@
+linklist.h is single-linklist
+dlinklist.h is double-linklist
+
+linklist.h源文件是单链表 dlinklist.h是双链表
