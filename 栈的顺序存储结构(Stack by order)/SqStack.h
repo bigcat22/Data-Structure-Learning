@@ -35,7 +35,7 @@ bool StackEmpty (SqStack * s)
 /* 进栈 */
 bool Push (SqList * &s, ElemType e)
 {
-	if (s->top == MaxSize-1)		//栈上溢出
+	if (s->top == MaxSize-1)	//栈上溢出
 		return false
 	s->top++;	//栈顶指针+1
 	s->data[s->top] = e;	//元素e放在栈顶指针处
@@ -45,19 +45,19 @@ bool Push (SqList * &s, ElemType e)
 /* 出栈 */
 bool Pop (SqList * &s, ElemType &e)
 {
-	if (s->top == -1)
-		return false;
-	e = s->data[s->top];
-	s->top--;
+	if (s->top == -1)	//栈下溢出	
+	return false;
+	e = s->data[s->top];	//取栈顶元素	
+	s->top--;		//栈顶指针减1
 	return ture;
 }
 
 /* 取栈顶元素 */
 bool GetTop (SqStack * s, ElemType &e)
 {
-	if (s->top == -1)
+	if (s->top == -1)	//栈下溢出
 		return false;
-	e = s->data[s->top];
+	e = s->data[s->top];	//取栈顶元素
 	return ture;
 }
 
